@@ -40,6 +40,5 @@ def get_parameter_hash(params):
     """
 
     md5 = hashlib.md5()
-    md5.update(str(json.dumps(params, sort_keys=True)))
+    md5.update(str(json.dumps(params, sort_keys=True)).encode('utf-8'))
     return md5.hexdigest()
-

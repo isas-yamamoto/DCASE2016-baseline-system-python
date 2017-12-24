@@ -46,8 +46,8 @@ def event_detection(feature_data, model_container, hop_length_seconds=0.01, smoo
 
     results = []
     for event_label in model_container['models']:
-        positive = model_container['models'][event_label]['positive'].score_samples(feature_data)[0]
-        negative = model_container['models'][event_label]['negative'].score_samples(feature_data)[0]
+        positive = model_container['models'][event_label]['positive'].score_samples(feature_data)
+        negative = model_container['models'][event_label]['negative'].score_samples(feature_data)
 
         # Lets keep the system causal and use look-back while smoothing (accumulating) likelihoods
         for stop_id in range(0, feature_data.shape[0]):

@@ -5,7 +5,7 @@ import os
 import wave
 import numpy
 import csv
-import cPickle as pickle
+import pickle
 import librosa
 import yaml
 import soundfile
